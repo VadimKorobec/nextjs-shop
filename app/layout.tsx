@@ -2,6 +2,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
+import StoreProvider from "@/redux/StoreProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +23,7 @@ export default function RootLayout({
       <html lang="en" className={roboto.className}>
         <body>
           <Header />
-          {children}
+          <StoreProvider>{children}</StoreProvider>
         </body>
       </html>
     </>
